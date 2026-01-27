@@ -11,12 +11,12 @@ def permit_response(request):
         "response": {
             "permitType": [
                 {
-                    "id": 1,
+                    "permitTypeId": 1,
                     "title": "Hot Work Permit",
                     "updatedTime": "2026-01-27 10:30:00"
                 },
                 {
-                    "id": 2,
+                    "permitTypeId": 2,
                     "title": "Cold Work Permit",
                     "updatedTime": "2026-01-27 10:30:00"
                 }
