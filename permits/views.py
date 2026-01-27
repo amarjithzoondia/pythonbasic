@@ -1,0 +1,57 @@
+from django.shortcuts import render
+from django.http import JsonResponse
+from datetime import datetime
+
+def permit_response(request):
+    # For now, using the exact data requested, but preparing for dynamic data
+    response_data = {
+        "hasError": False,
+        "errorCode": -1,
+        "message": "Success",
+        "response": {
+            "permitType": [
+                {
+                    "id": 1,
+                    "title": "Hot Work Permit",
+                    "updatedTime": "2026-01-27 10:30:00"
+                },
+                {
+                    "id": 2,
+                    "title": "Cold Work Permit",
+                    "updatedTime": "2026-01-27 10:30:00"
+                }
+            ],
+            "generalConditionsSection": [
+                {
+                    "id": 101,
+                    "permitTypeId": 1,
+                    "title": "Fire extinguisher available?",
+                    "updatedTime": "2026-01-27 10:30:00"
+                },
+                {
+                    "id": 102,
+                    "permitTypeId": 2,
+                    "title": "Is PPE mandatory?",
+                    "updatedTime": "2026-01-27 10:30:00"
+                }
+            ],
+            "certificateValiditySection": [
+                {
+                    "id": 201,
+                    "permitTypeId": 1,
+                    "title": "Start Time",
+                    "updatedTime": "2026-01-27 10:30:00"
+                },
+                {
+                    "id": 202,
+                    "permitTypeId": 1,
+                    "title": "Work End Time",
+                    "updatedTime": "2026-01-27 10:30:00"
+                }
+            ],
+            "deletedPermitIds": [],
+            "deletedGeneralSectionsIds": [],
+            "deletedCertificateValiditySection": []
+        }
+    }
+    return JsonResponse(response_data, json_dumps_params={'indent': 2})
