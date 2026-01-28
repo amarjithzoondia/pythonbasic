@@ -14,13 +14,11 @@ def permit_response(request):
                     "permitTypeId": 1,
                     "title": "Hot Work Permit",
                     "updatedTime": "2026-01-27 10:30:00",
-                    "version": 1.2
                 },
                 {
                     "permitTypeId": 2,
                     "title": "Cold Work Permit",
                     "updatedTime": "2026-01-27 10:30:00",
-                    "version": 1.0
                 }
             ],
             "generalConditionsSection": [
