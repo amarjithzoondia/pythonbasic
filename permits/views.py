@@ -1,31 +1,26 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from datetime import datetime
 
 def permit_response(request):
+    # Construct the response data with the required wrapper
     response_data = {
-        "hasError": False,   # ← FIXED
+        "hasError": False,
         "errorCode": -1,
         "message": "Success",
         "response": {
-            "deletedPermitIds": [],
-            "deletedGeneralSectionsIds": [],
-            "deletedCertificateValiditySection": [],
-
             "permitType": [
                 {
-                    "id": 1,
+                    "permitTypeId": 1,
                     "title": "Hot Work Permit",
-                    "updatedTime": "2026-01-27 10:30:00",
-                    "version": 1.0
+                    "updatedTime": "2026-01-27 10:30:00"
                 },
                 {
-                    "id": 2,
+                    "permitTypeId": 2,
                     "title": "Cold Work Permit",
-                    "updatedTime": "2026-01-27 10:30:00",
-                    "version": 1.0
+                    "updatedTime": "2026-01-27 10:30:00"
                 }
             ],
-
             "generalConditionsSection": [
                 {
                     "id": 101,
@@ -40,7 +35,6 @@ def permit_response(request):
                     "updatedTime": "2026-01-27 10:30:00"
                 }
             ],
-
             "certificateValiditySection": [
                 {
                     "id": 201,
@@ -54,8 +48,21 @@ def permit_response(request):
                     "title": "Work End Time",
                     "updatedTime": "2026-01-27 10:30:00"
                 }
-            ]
+            ],
+            "deletedPermitIds": [],
+            "deletedGeneralSectionsIds": [],
+            "deletedCertificateValiditySection": []
         }
     }
 
-    return JsonResponse(response_data, json_dumps_params={'indent': 2})
+    # Create the response object
+    response = JsonResponse(response_data)
+    
+    # Fix for iOS Brotli issue:
+    # Explicitly set Content-Encoding to 'identity' to tell proxies (like Render's edge) 
+    # not to compress this specific response with Brotli or Gzip.
+    response['Content-Encoding'] = 'identity'
+    # 'no-transform' tells proxies/CDNs not to modify the response body (prevents auto-compression)
+    response['Cache-Control'] = 'no-transform'
+    
+    return response
