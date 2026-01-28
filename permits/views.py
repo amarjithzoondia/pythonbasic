@@ -13,12 +13,14 @@ def permit_response(request):
                 {
                     "permitTypeId": 1,
                     "title": "Hot Work Permit",
-                    "updatedTime": "2026-01-27 10:30:00"
+                    "updatedTime": "2026-01-27 10:30:00",
+                    "version": 1.2
                 },
                 {
                     "permitTypeId": 2,
                     "title": "Cold Work Permit",
-                    "updatedTime": "2026-01-27 10:30:00"
+                    "updatedTime": "2026-01-27 10:30:00",
+                    "version": 1.0
                 }
             ],
             "generalConditionsSection": [
@@ -28,20 +30,8 @@ def permit_response(request):
                     "title": "Fire extinguisher available?",
                     "updatedTime": "2026-01-27 10:30:00"
                 },
-                {
-                    "id": 102,
-                    "permitTypeId": 2,
-                    "title": "Is PPE mandatory?",
-                    "updatedTime": "2026-01-27 10:30:00"
-                }
             ],
             "certificateValiditySection": [
-                {
-                    "id": 201,
-                    "permitTypeId": 1,
-                    "title": "Start Time",
-                    "updatedTime": "2026-01-27 10:30:00"
-                },
                 {
                     "id": 202,
                     "permitTypeId": 1,
