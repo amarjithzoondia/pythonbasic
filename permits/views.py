@@ -30,16 +30,22 @@ def permit_response(request):
             ],
             "permitType": [
                 {
-                    "permitTypeId": 1,
-                    "title": "Hot Work Permit",
-                    "updatedTime": "2026-01-27 10:30:00",
-                    "version": "1.2"
+                    "permitTypeId": 3,
+                    "title": "Height Work Certificate",
+                    "updatedTime": "2026-01-24 16:20:56",
+                    "image": ""
                 },
                 {
                     "permitTypeId": 2,
-                    "title": "Cold Work Permit",
-                    "updatedTime": "2026-01-27 10:30:00",
-                    "version": "1"
+                    "title": "Height Work Certificate",
+                    "updatedTime": "2026-01-24 16:21:00",
+                    "image": "https://rotgdevbkt.s3.ap-south-1.amazonaws.com/permits/images111_36e29.png"
+                },
+                {
+                    "permitTypeId": 1,
+                    "title": "Hot Work Certificates",
+                    "updatedTime": "2026-01-24 16:21:03",
+                    "image": "https://rotgdevbkt.s3.ap-south-1.amazonaws.com/permits/250*250_f0b76.jpeg"
                 }
             ]
         }
